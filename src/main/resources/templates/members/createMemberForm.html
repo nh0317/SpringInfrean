@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+  <form action="/members/new" method="post">
+    <!--버튼을 누르면 action url로 post 방식으로 넘어감 -->
+    <div class="form-group">
+      <label for="name">이름</label>
+      <input type="text" id="name" name="name" placeholder="이름을
+입력하세요">
+      <!--name 키와 value가 넘어감 -->
+    </div>
+    <button type="submit">등록</button>
+  </form>
+</div> <!-- /container -->
+</body>
+</html>
