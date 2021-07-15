@@ -10,6 +10,18 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+
+//aop가 필요한 상황?
+//모든 메소드의 호출 시간을 알고 싶을 떄
+//근데 이는 시간을 핵심 관심 사항이 아님 공통 관심 사항임
+//나중에 유지 보수가 어려움
+//별도의 공통 로직으로 만들기 어렵다
+
+//AOP
+//공통 관심 사항과 핵심 관심사항을 분리
+// 시간 측정 로직을 등록하고 연결함
+
+
 //ctrl shift T로 테스트 자동 생성 가능
 //@Service // spring 이 service라고 container에 등록
 
@@ -26,6 +38,7 @@ public class MemberService {
 
     //회원가입
     public  Long join(Member member){
+
 //        같은 이름이 있는 중복 회원 X
 //         Optional<Member> result = memberRepository.findByName(member.getName());
 
@@ -54,7 +67,7 @@ public class MemberService {
     //repository는 더 기계적으로 용어 선택
     //전체 회원 조회
     public List<Member> findMembers(){
-        return memberRepository.findAll();
+            return memberRepository.findAll();
     }
     public  Optional<Member> findOne(Long memberId){
         return  memberRepository.findById(memberId);
